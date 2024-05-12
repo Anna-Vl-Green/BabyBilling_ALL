@@ -46,7 +46,7 @@ public class Commutator {
         try {
 
             var currentTime = LocalDateTime.now();
-            var stopTime = currentTime.plusMonths(2); // plusYears(1);
+            var stopTime = currentTime.plusYears(1);
             ArrayList<Cdr> pullCDR = new ArrayList<>(10);
             while (currentTime.isBefore(stopTime)) {
                 var callType = "0" + Long.toString(current().nextLong(1, 3)); //генерация типа звонка
