@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bbdc2a0-17fb-4fae-962a-8e277793f351" name="Changes" comment="2 commit">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bootcamp/brt/service/RandomService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bootcamp/brt/web/client/BrtClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bootcamp/brt/web/controller/BrtController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bootcamp/brt/web/model/SubscriberPayDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bootcamp/brt/web/model/SubscriberUpgradeDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bootcamp/brt/web/service/WebService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bootcamp/brt/KafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bootcamp/brt/KafkaConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bootcamp/brt/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bootcamp/brt/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bootcamp/brt/service/MonthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bootcamp/brt/service/MonthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bootcamp/brt/service/MsisdnService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bootcamp/brt/service/MsisdnService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bootcamp/brt/service/WithdrawService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bootcamp/brt/service/WithdrawService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../babyBilling/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../babyBilling/.idea/vcs.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
   <component name="ProjectId" id="2fps1ImueYZ05Lrw47yWIANaBwe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -46,12 +34,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/workspace/BabyBilling_ALL/BabyBilling_HRS"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\projects\bb\BabyBilling_BRT" />
@@ -132,7 +120,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1 commit" />

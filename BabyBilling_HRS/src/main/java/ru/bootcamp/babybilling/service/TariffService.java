@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import ru.bootcamp.babybilling.db.Tariffs;
 import ru.bootcamp.babybilling.db.TariffsRepo;
 import ru.bootcamp.babybilling.model.CdrPlus;
 import ru.bootcamp.babybilling.model.CostCalc;
@@ -16,6 +15,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Сервис работы с тарифами
+ */
 @Slf4j
 @RequiredArgsConstructor
 @Service
@@ -24,6 +26,10 @@ public class TariffService {
     private final TariffsRepo repo;
     private final ObjectMapper mapper;
 
+    /** Выгрузка деталей по тарифам и отправка их в Kafka
+     * @param tariffsList список тарифов
+     * @throws JsonProcessingException
+     */
     public void processTariff(List<Integer> tariffsList) throws JsonProcessingException {
         for (var t : tariffsList) {
             var tariff = repo.findById(t);

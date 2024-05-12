@@ -17,6 +17,10 @@ public class KafkaConsumer {
     private final ObjectMapper mapper;
     private final TariffService tariffService;
 
+    /** Листенер сообщений топика "tariff_events".
+     * @param in входное сообщение.
+     * @throws JsonProcessingException
+     */
     @KafkaListener(id = "listenTariff", topics = "tariff_events")
     public void listenTariff(String in) throws JsonProcessingException {
         System.out.println(in);
@@ -26,6 +30,10 @@ public class KafkaConsumer {
 
     }
 
+    /** Листенер сообщений топика "call_events".
+     * @param in входное сообщение.
+     * @throws JsonProcessingException
+     */
     @KafkaListener(id = "listenCall", topics = "call_events")
     public void listenCall(String in) throws JsonProcessingException {
         System.out.println(in);

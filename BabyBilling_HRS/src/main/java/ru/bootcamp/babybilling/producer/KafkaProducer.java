@@ -7,11 +7,17 @@ import org.springframework.stereotype.Service;
 
 import java.util.function.BiConsumer;
 
+/**
+ * Отправитель сообщений в Kafka.
+ */
 @RequiredArgsConstructor
 @Service
 public class KafkaProducer {
     private final KafkaTemplate<String, String> kafkaTemplate;
 
+    /** Отправитель сообщения в топик "monthly_fee_events".
+     * @param message сообщение о ежемесячном списании.
+     */
     public void sendMessageMonthlyFee(String message) {
 
         try {
@@ -26,6 +32,9 @@ public class KafkaProducer {
         }
     }
 
+    /** Отправитель сообщения в топик "withdraw_events".
+     * @param message сообщение со счётом на оплату.
+     */
     public void sendMessageWithdraw(String message) {
 
         try {

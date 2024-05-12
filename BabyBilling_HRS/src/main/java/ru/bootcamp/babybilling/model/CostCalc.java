@@ -2,6 +2,9 @@ package ru.bootcamp.babybilling.model;
 
 import lombok.Data;
 
+/**
+ * Сущность счёта на оплату.
+ */
 @Data
 public class CostCalc {
     // Номер абонента
