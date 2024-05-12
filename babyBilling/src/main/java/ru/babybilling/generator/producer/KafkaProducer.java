@@ -7,11 +7,17 @@ import org.springframework.stereotype.Service;
 
 import java.util.function.BiConsumer;
 
+/**
+ * Отправитель данных в Kafka
+ */
 @RequiredArgsConstructor
 @Service
 public class KafkaProducer {
     private final KafkaTemplate<String, String> kafkaTemplate;
 
+    /** Отправка сообщения  в топик "cdr_events"
+     * @param message запись CDR
+     */
     public void sendMessage(String message) {
 
         try {

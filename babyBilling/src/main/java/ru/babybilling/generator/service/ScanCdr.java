@@ -18,6 +18,9 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.List;
 
+/**
+ * Сканер CDR-файлов.
+ */
 @RequiredArgsConstructor
 @Service
 public class ScanCdr {
@@ -26,6 +29,10 @@ public class ScanCdr {
     private final CallsRepo repo;
     private final SubscribersRepo repoSubs;
 
+    /**
+     * Сканер директории хранения CDR-файлов.
+     * @throws IOException
+     */
     public void scanCdr() throws IOException {
         File folder = new File("cdr");
         File[] listOfFiles = folder.listFiles();
@@ -38,6 +45,10 @@ public class ScanCdr {
         }
     }
 
+    /** Чтение CDR-файла для отправки сообщением в Kafka
+     * @param file CDR-файл
+     * @throws IOException
+     */
     public void readCDR(File file) throws IOException {
         List<String> linesCdr = Files.readAllLines(Paths.get("cdr/" + file.getName()));
         for (String line : linesCdr) {
@@ -47,6 +58,9 @@ public class ScanCdr {
         }
     }
 
+    /** Сохранение звонковой записи в БД.
+     * @param lineCall звонковая запись.
+     */
     public void saveCall(String lineCall) {
         if (lineCall == null || lineCall.isEmpty()) {
             throw new IllegalArgumentException("Ошибка. Пустая строка CDR");

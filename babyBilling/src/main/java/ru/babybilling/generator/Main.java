@@ -13,6 +13,10 @@ import java.util.concurrent.Executors;
 @SpringBootApplication
 @EnableJpaRepositories
 public class Main {
+    /** Многопоточная генерация иммтации работы комутатора.
+     * @param args
+     * @throws IOException
+     */
     public static void main(String args[]) throws IOException {
         var context = SpringApplication.run(Main.class, args);
         context.getBean(Commutator.class).generate();

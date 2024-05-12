@@ -17,6 +17,9 @@ import java.util.Comparator;
 
 import static java.util.concurrent.ThreadLocalRandom.current;
 
+/**
+ * Иммитатор работы коммутатора. Генерация звонков абонентов по случайно заданным условиям.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -26,10 +29,18 @@ public class Commutator {
     private final SubscribersRepo repo;
     private final KafkaProducer producer;
 
+    /**
+     * Получение абонента из БД иммитатора.
+     * @return Номер абонента для иммитации
+     */
     private String getSubscriber() {
         return repo.findAll().get(current().nextInt(0, 20)).getMsisdn();
     }
 
+    /**
+     * Генератор звонковых записей CDR для цикла иммитации в 1 год. Для каждого звонка генерируется 2 записи для 2-х
+     * абонентов из иммитации
+     */
     public void generate() {
         try {
 
@@ -87,6 +98,10 @@ public class Commutator {
         }
     }
 
+    /**
+     * Запись звонков в CDR-файл.
+     * @param pullCDR набор звонковых записей для записи в файл.
+     */
     private void writeToCDR(ArrayList<Cdr> pullCDR) {
         try {
             if (!pullCDR.isEmpty()) {

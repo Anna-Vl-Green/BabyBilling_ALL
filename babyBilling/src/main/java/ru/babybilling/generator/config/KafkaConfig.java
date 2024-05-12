@@ -16,6 +16,9 @@ import java.util.Map;
 @EnableKafka
 @Configuration
 public class KafkaConfig {
+    /**
+     * @return Конфигурация Kafka
+     */
     @Bean
     public ProducerFactory<String, String> producerFactory() {
         Map<String, Object> configProps = new HashMap<>();
