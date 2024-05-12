@@ -7,12 +7,18 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.bootcamp.babybilling.db.entity.Managers;
 import ru.bootcamp.babybilling.db.repo.ManagersRepo;
 
+/**
+ * Модуль работы менеджера.
+ */
 @RestController
 @Slf4j
 @RequiredArgsConstructor
 public class ManagerController {
     private final ManagersRepo repo;
 
+    /** Идентификация менеджера.
+     * @param username имя менеджера
+     */
     @PostMapping("/managers")
     public void managerIdentification(String username) {
         Managers authManager = repo.findByUsername(username);

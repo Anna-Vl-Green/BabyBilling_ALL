@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import ru.bootcamp.babybilling.model.SubscriberPayDto;
 import ru.bootcamp.babybilling.model.SubscriberUpgradeDto;
 
+/**
+ * API-интерфейс
+ */
 @FeignClient(
         name = "brt-client",
         url = "${feign.svc.brt.url:}"
