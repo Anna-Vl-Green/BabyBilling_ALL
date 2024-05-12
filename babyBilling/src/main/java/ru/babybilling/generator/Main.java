@@ -13,7 +13,7 @@ import java.util.concurrent.Executors;
 @SpringBootApplication
 @EnableJpaRepositories
 public class Main {
-    /** Многопоточная генерация иммтации работы комутатора.
+    /** Многопоточная генерация имитации работы комутатора.
      * @param args
      * @throws IOException
      */

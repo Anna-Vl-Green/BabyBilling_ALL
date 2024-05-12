@@ -22,14 +22,14 @@ public class MonthService {
     private final ObjectMapper mapper;
     private final KafkaProducer producer;
     private final RandomService randomService;
-
+    private int currentMonth = LocalDateTime.now().getMonthValue();
     /** Проверка на начало нового месяца и списание абонентской платы у абонентов.
      * @param startTime временная точка из звонка.
      */
     public void checkMonth(LocalDateTime startTime) {
-        var currentMonth = LocalDateTime.now().getMonthValue();
         var month = startTime.getMonthValue();
-        if (month > currentMonth) {
+        if (month > this.currentMonth) {
+            this.currentMonth = month;
             var subscribers = repo.findAll();
             var tariffsIds = new HashMap<>();
             for (var t : subscribers) {

@@ -7,4 +7,3 @@
 * [Ссылка на swagger UI](http://localhost:8080/swagger-ui/index.html#/);
 * [Схема запуска сервисов в ручном режиме (без docker-compose)](Documentation/manual_run.md)
 * [Данные для авторизации](Documentation/auth.md);
-* Ссылку на UI базы с клиентами

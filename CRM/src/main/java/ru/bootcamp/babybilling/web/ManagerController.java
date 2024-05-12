@@ -16,7 +16,9 @@ import ru.bootcamp.babybilling.db.repo.ManagersRepo;
 public class ManagerController {
     private final ManagersRepo repo;
 
-    /** Идентификация менеджера.
+    /**
+     * Идентификация менеджера.
+     *
      * @param username имя менеджера
      */
     @PostMapping("/managers")

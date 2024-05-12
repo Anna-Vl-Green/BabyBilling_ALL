@@ -56,7 +56,7 @@ public class TariffService {
         costCalc.setMinutesCost(0);
         if (tariff.isPresent()) {
             var details = tariff.get().getDetails();
-            Map<String, Integer> detailsMap = new HashMap<>();
+            Map<String, Float> detailsMap = new HashMap<>();
             for (var d : details) {
                 detailsMap.put(d.getType(), d.getValue());
             }
@@ -117,7 +117,7 @@ public class TariffService {
                     var tariffClassic = repo.findById(11);
                     var detailsClassic = tariffClassic.get().getDetails();
                     log.info("Детали тарифа - {}", detailsClassic);
-                    Map<String, Integer> detailsClassicMap = new HashMap<>();
+                    Map<String, Float> detailsClassicMap = new HashMap<>();
                     for (var c : detailsClassic) {
                         detailsClassicMap.put(c.getType(), c.getValue());
                     }
@@ -130,7 +130,7 @@ public class TariffService {
                         log.info("Номер абонента {}", costCalc.getMsisdn());
                         costCalc.setCost((float) remainsMinutes * (float) outgoingCost);
                         log.info("Стоимость вызова - {}", costCalc.getCost());
-                        costCalc.setMinutesCost(amountMinutes);
+                        costCalc.setMinutesCost(0);
                         log.info("Количество списанных минут - {}", costCalc.getMinutesCost());
                         var json = mapper.writeValueAsString(costCalc);
                         log.info("Стоимость вызова - {}", json);

@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * интерфейс работы с репозитоорием Calls
+ * интерфейс работы с репозиторием Calls
  */
 @ComponentScan
 @Repository

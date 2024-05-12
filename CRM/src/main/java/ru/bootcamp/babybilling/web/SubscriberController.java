@@ -19,7 +19,9 @@ import ru.bootcamp.babybilling.model.SubscriberUpgradeDto;
 public class SubscriberController {
     private final BrtClient brtClient;
 
-    /** Внесение платежа.
+    /**
+     * Внесение платежа.
+     *
      * @param dto Сущность внесения платежа.
      * @return True если http-code 200.
      */
@@ -29,7 +31,9 @@ public class SubscriberController {
         return ResponseEntity.ok(brtClient.subscriberPay(dto));
     }
 
-    /** Авторизация абонента.
+    /**
+     * Авторизация абонента.
+     *
      * @param msisdn номер абонента.
      * @return True если http-code 200.
      */
@@ -38,7 +42,9 @@ public class SubscriberController {
         return ResponseEntity.ok(brtClient.subscriberAuth(msisdn));
     }
 
-    /** Изменение абонента.
+    /**
+     * Изменение абонента.
+     *
      * @param dto Сущность изменения тарифа.
      * @return True если http-code 200.
      */
@@ -47,7 +53,9 @@ public class SubscriberController {
         return ResponseEntity.ok(brtClient.subscriberUpgrade(dto));
     }
 
-    /** Создание абонента.
+    /**
+     * Создание абонента.
+     *
      * @param dto Сущность изменения тарифа.
      * @return True если http-code 200.
      */

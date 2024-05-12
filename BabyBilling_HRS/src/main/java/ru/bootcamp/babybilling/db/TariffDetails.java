@@ -8,5 +8,5 @@ import lombok.Data;
 @Data
 public class TariffDetails {
     private String type;
-    private Integer value;
+    private Float value;
 }

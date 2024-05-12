@@ -22,6 +22,6 @@ public class Managers {
     private Integer id;
     @Column(name = "username")
     private String username;
-    @Column(name = "password") //TODO: сделать зашифрованным//
+    @Column(name = "password")
     private String password;
 }
