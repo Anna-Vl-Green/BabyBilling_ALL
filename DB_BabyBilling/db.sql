@@ -9,18 +9,6 @@ SET default_transaction_read_only = off;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 
---
--- Roles
---
-
-CREATE ROLE postgres;
-ALTER ROLE postgres WITH SUPERUSER INHERIT CREATEROLE CREATEDB LOGIN REPLICATION BYPASSRLS PASSWORD 'SCRAM-SHA-256$4096:4kIN6Ai8L3vLyaSS4vUsxw==$AgdKrJ9fsTNP+i+52W4WbmlUgQ3ju06WtELORLySQNU=:ziczn//m7/xYSEuWD+3vDGwkfTXFYjsy1NpgFDaJI9I=';
-
---
--- User Configurations
---
-
-
 
 
 
