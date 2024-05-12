@@ -6,12 +6,18 @@ import org.springframework.stereotype.Service;
 import ru.bootcamp.brt.db.SubscribersRepo;
 import ru.bootcamp.brt.model.CostCalc;
 
+/**
+ * Сервис изменения биллинговой информации абонентов.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class WithdrawService {
     private final SubscribersRepo repo;
 
+    /** Внесение изменений на основании счёта на оплату.
+     * @param costCalc счёт на оплату.
+     */
     public void calc(CostCalc costCalc) {
         var subscriber = repo.findByMsisdn(costCalc.getMsisdn().toString());
         if (subscriber != null) {

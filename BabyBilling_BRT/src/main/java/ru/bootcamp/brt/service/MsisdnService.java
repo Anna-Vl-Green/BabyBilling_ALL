@@ -19,6 +19,9 @@ public class MsisdnService {
     private final KafkaProducer producer;
     private final ObjectMapper mapper;
 
+    /** Проверка звонковой записи на внутренний звонок и отправка сообщения о звонке.
+     * @param cdrPlus Сущность звонка абонента "Ромашка".
+     */
     public void checkMsisdn(CdrPlus cdrPlus) {
         Subscribers subFirst = repo.findByMsisdn(cdrPlus.getMsisdn().toString());
         Subscribers subSecond = repo.findByMsisdn(cdrPlus.getSecondMsisdn().toString());

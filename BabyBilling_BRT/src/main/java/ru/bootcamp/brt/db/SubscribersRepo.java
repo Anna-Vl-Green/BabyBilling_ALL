@@ -5,6 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * Интерфейс работы с таблицей Абонентов
+ */
 @Repository
 public interface SubscribersRepo extends JpaRepository<Subscribers, Integer> {
     Subscribers findByMsisdn(String msisdn);

@@ -6,11 +6,17 @@ import ru.bootcamp.brt.db.SubscribersRepo;
 
 import static java.util.concurrent.ThreadLocalRandom.current;
 
+/**
+ * Сервис рандомизации иммитации
+ */
 @Service
 @RequiredArgsConstructor
 public class RandomService {
     private final SubscribersRepo repo;
 
+    /**
+     * Рандомизация действий абонентов по внесению платы и смене тарифа.
+     */
     public void randomChange() {
         var subs = repo.findAll();
         for (var s : subs) {

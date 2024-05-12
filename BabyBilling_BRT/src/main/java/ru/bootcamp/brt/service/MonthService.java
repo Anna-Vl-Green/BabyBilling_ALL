@@ -11,6 +11,9 @@ import ru.bootcamp.brt.producer.KafkaProducer;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 
+/**
+ * Сервис ежемесячной оплаты
+ */
 @Service
 @RequiredArgsConstructor
 public class MonthService {
@@ -20,6 +23,9 @@ public class MonthService {
     private final KafkaProducer producer;
     private final RandomService randomService;
 
+    /** Проверка на начало нового месяца и списание абонентской платы у абонентов.
+     * @param startTime временная точка из звонка.
+     */
     public void checkMonth(LocalDateTime startTime) {
         var currentMonth = LocalDateTime.now().getMonthValue();
         var month = startTime.getMonthValue();
@@ -40,6 +46,9 @@ public class MonthService {
         }
     }
 
+    /** обновление данных у абонентов с абонетской платой.
+     * @param monthlyFee Сущность ежемесечной оплаты.
+     */
     public void offsMonthlyFee(MonthlyFee monthlyFee) {
         var subscribers = repo.findByTariffId(monthlyFee.getTariffId());
         for (var s : subscribers) {

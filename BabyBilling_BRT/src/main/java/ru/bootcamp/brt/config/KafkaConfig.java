@@ -14,9 +14,15 @@ import org.springframework.kafka.core.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Конфигуратор Kafka
+ */
 @EnableKafka
 @Configuration
 public class KafkaConfig {
+    /** Настройка получателя Kafka
+     * @return Конфигурация Kafka
+     */
     @Bean
     public ConsumerFactory<String, String> consumerFactory() {
 
@@ -38,6 +44,9 @@ public class KafkaConfig {
         return new DefaultKafkaConsumerFactory<>(config);
     }
 
+    /** Фабрика слушателя
+     * @return фабрика
+     */
     @Bean
     public ConcurrentKafkaListenerContainerFactory<String, String>
     kafkaListenerContainerFactory() {
@@ -48,6 +57,9 @@ public class KafkaConfig {
         return factory;
     }
 
+    /** Настройка отправителя Kafka
+     * @return Конфигурация Kafka
+     */
     @Bean
     public ProducerFactory<String, String> producerFactory() {
         Map<String, Object> configProps = new HashMap<>();

@@ -26,6 +26,9 @@ public class KafkaConsumer {
     private final WithdrawService withdrawService;
     private final MonthService monthService;
 
+    /** Листнер сообщений ОТ CDRg топика "cdr_events".
+     * @param in входное сообщение.
+     */
     @KafkaListener(id = "listenCdr", topics = "cdr_events")
     public void listenCdr(String in) {
         System.out.println(in);
@@ -46,6 +49,10 @@ public class KafkaConsumer {
         }
     }
 
+    /** Листенер сообщений топика "monthly_fee_events"
+     * @param in входное сообщение.
+     * @throws JsonProcessingException
+     */
     @KafkaListener(id = "listenMonthlyFee", topics = "monthly_fee_events")
     public void listenMonthlyFee(String in) throws JsonProcessingException {
         System.out.println(in);
@@ -53,6 +60,10 @@ public class KafkaConsumer {
         monthService.offsMonthlyFee(monthlyFee);
     }
 
+    /**
+     * @param in входное сообщение.
+     * @throws IOException
+     */
     @KafkaListener(id = "listenWithdraw", topics = "withdraw_events")
     public void listenWithdraw(String in) throws IOException {
         System.out.println(in);
